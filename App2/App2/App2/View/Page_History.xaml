@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local1="clr-namespace:App2.ViewModel" 
+             
+             x:Class="App2.View.Page_History">
+
+
+
+   
+    
+    
+    
+    
+    
+    
+    <ContentPage.Content BindingContext ="{StaticResource VM_GameInfo.GameHistory}">
+
+        <ListView ItemsSource="{Binding GameHistory}" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding Str_Title}"/>
+                                <Label Text="{Binding SaveDateTime}"/>
+                                <Label Text="{Binding Str_Winner}"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+       
+    </ContentPage.Content>
+</ContentPage>

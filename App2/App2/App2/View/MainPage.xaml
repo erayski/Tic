@@ -1,0 +1,47 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="MainPage"
+             xmlns:local="clr-namespace:App2" 
+             xmlns:local1="clr-namespace:App2.ViewModel"
+             x:Class="App2.MainPage">
+
+
+
+   
+
+
+
+
+
+    <StackLayout BindingContext="{StaticResource VM_GameInfo}">
+
+
+
+        <Label Text="Tic Tac Toe"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid  Grid.Column="0">
+               <Label Grid.Row="0"              Text="Player1"/>
+                <Entry Grid.Row="1"              Placeholder="Enter player 1's name" Text="{Binding EnteredInfo.Player1Name}"/>
+                <Button Grid.Row="2"             Text="" Command="{Binding GoTo_History}" CommandParameter="0"/>
+            </Grid>
+            <Grid  Grid.Column="1">
+                <Label Grid.Row="0"             Text="Player2"/>
+                <Entry Grid.Row="1"             Placeholder="Enter player 2's name"  Text="{Binding EnteredInfo.Player2Name}" />
+                <Button Grid.Row="2"            Text="Start Game" Command="{Binding GoTo_GamePlay}" CommandParameter="1"/>
+            </Grid>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
